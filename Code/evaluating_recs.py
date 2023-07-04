@@ -19,7 +19,6 @@ def get_top_n(predictions, algo_weights, n):
     A dict where keys are user (raw) ids and values are lists of tuples:
         [(raw item id, rating estimation), ...] of size n.
     '''
-
     # First map the predictions to each user.
     top_n = defaultdict(list)
     top_n_ndcg = defaultdict(list)
@@ -35,11 +34,9 @@ def get_top_n(predictions, algo_weights, n):
     for uid, user_ratings in top_n.items():
         user_ratings.sort(key=lambda x: x[1], reverse=True)
         top_n[uid] = user_ratings[:n]
-
     for uid, user_ratings in top_n_ndcg.items():
         user_ratings.sort(key=lambda x: x[2], reverse=True)
         top_n_ndcg[uid] = user_ratings[:n]
-
     return top_n, top_n_ndcg
 
 

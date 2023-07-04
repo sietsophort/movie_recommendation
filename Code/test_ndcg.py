@@ -52,8 +52,8 @@ def ndcg_at_k(scores):
 # ---------------------------------------------------------------------
 
 
-file_path_train = 'training_data.csv'
-file_path_test = 'testing_data.csv'
+file_path_train = './data_test/training_data.csv'
+file_path_test = './data_test/testing_data.csv'
 traindf = pd.read_csv(file_path_train)
 testdf = pd.read_csv(file_path_test)
 trainset, testset = convert_traintest_dataframe_forsurprise(traindf, testdf)
